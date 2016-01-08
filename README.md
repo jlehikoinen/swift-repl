@@ -3,7 +3,7 @@ Swift REPL in Docker container
 
 Base image: ubuntu 15.10
 
-<https://swift.org> > [Using the Swift REPL](https://swift.org/getting-started/#using-the-repl)
+[swift.org](https://swift.org) > [Using the Swift REPL](https://swift.org/getting-started/#using-the-repl)
 
 ## Docker Hub image
 
@@ -18,6 +18,8 @@ Base image: ubuntu 15.10
 ### Setup
 
 `$ git clone https://github.com/jlehikoinen/swift-repl.git`
+
+`$ cd swift-repl`
 
 `$ docker build -t my-swift .`
 
