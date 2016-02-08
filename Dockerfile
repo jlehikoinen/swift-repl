@@ -16,8 +16,8 @@ ENV SWIFT_PATH /usr/local
 ENV PATH $SWIFT_PATH/swift/usr/bin:$PATH
 
 RUN cd $SWIFT_PATH && \
-	wget https://swift.org/builds/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz && \
-	wget https://swift.org/builds/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz.sig && \
+	wget https://swift.org/builds/swift-2.2-branch/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz && \
+	wget https://swift.org/builds/swift-2.2-branch/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz.sig && \
 	tar xzf swift-$VERSION-$PLATFORM.tar.gz && \
 	mv swift-$VERSION-$PLATFORM swift && \
 	gpg --verify swift-$VERSION-$PLATFORM.tar.gz.sig && \

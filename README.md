@@ -1,7 +1,9 @@
 Swift REPL in Docker container
 ==============================
 
-Base image: ubuntu 15.10
+Base image: `ubuntu 15.10`
+
+Branch: `swift-2.2-branch`
 
 [swift.org](https://swift.org) > [Using the Swift REPL](https://swift.org/getting-started/#using-the-repl)
 
