@@ -18,12 +18,9 @@ let dateFormatter = NSDateFormatter()
 dateFormatter.locale = NSLocale(localeIdentifier: "fi_FI")
 dateFormatter.dateStyle = .FullStyle
 let localizedDate = dateFormatter.stringFromDate(date)
-
 print("Localized date: \(localizedDate)")
 
 // GNU C Library example
 
-// Random number:
 let randNumber = random()
-
 print("Random number: \(randNumber)")
