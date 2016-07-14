@@ -29,8 +29,8 @@ Branch: `development`
 
 Swift REPL:
 
-`$ docker run -it my-swift swift`
+`$ docker run -it --privileged=true my-swift swift`
 
 Run example script:
 
-`$ docker run -it --rm -v "$PWD":/code my-swift swift code/example.swift`
+`$ docker run -it --rm --privileged=true -v "$PWD":/code my-swift swift code/example.swift`
