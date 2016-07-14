@@ -13,7 +13,7 @@ Branch: `development`
 
 ## Run Swift REPL in Docker container
 
-`$ docker run -it --rm --privileged=true jlehikoinen/swift-repl swift`
+`$ docker run -it --privileged=true jlehikoinen/swift-repl swift`
 
 ## Build your own Docker image
 
