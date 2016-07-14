@@ -10,10 +10,10 @@ RUN apt-get update && \
 	wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
 	gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-# ENV BRANCH swift-2.2-branch
-ENV BRANCH development
-# ENV VERSION 2.2-SNAPSHOT-2016-02-03-a
-ENV VERSION DEVELOPMENT-SNAPSHOT-2016-06-20-a
+ENV BRANCH swift-2.2.1-release
+# ENV BRANCH development
+ENV VERSION 2.2.1-RELEASE
+# ENV VERSION DEVELOPMENT-SNAPSHOT-2016-06-20-a
 ENV PLATFORM ubuntu15.10
 ENV SWIFT_PATH /usr/local
 ENV PATH $SWIFT_PATH/swift/usr/bin:$PATH
