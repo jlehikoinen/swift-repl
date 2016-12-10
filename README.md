@@ -1,9 +1,9 @@
 Swift REPL in Docker container
 ==============================
 
-Base image: `ubuntu 15.10`
+Base image: `ubuntu 16.04`
 
-Branch: `swift-2.2.1-release`
+Branch: `swift-3.0.1-release`
 
 [swift.org](https://swift.org) > [Using the Swift REPL](https://swift.org/getting-started/#using-the-repl)
 
@@ -13,7 +13,7 @@ Branch: `swift-2.2.1-release`
 
 ## Run Swift REPL in Docker container
 
-`$ docker run -it jlehikoinen/swift-repl swift`
+`$ docker run --privileged -it jlehikoinen/swift-repl swift`
 
 ## Build your own Docker image
 
@@ -29,8 +29,8 @@ Branch: `swift-2.2.1-release`
 
 Swift REPL:
 
-`$ docker run -it my-swift swift`
+`$ docker run --privileged -it my-swift swift`
 
 Run example script:
 
-`$ docker run -it --rm -v "$PWD":/code my-swift swift code/example.swift`
+`$ docker run --privileged -it --rm -v "$PWD":/code my-swift swift code/example.swift`

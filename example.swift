@@ -18,11 +18,11 @@ func swift_example() {
 func objc_example() {
     print("\n// Obj-C Foundation Framework example //")
 
-    let date = NSDate()
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.locale = NSLocale(localeIdentifier: "fi_FI")
-    dateFormatter.dateStyle = .FullStyle
-    let localizedDate = dateFormatter.stringFromDate(date)
+    let date = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "fi_FI")
+    dateFormatter.dateStyle = .full
+    let localizedDate = dateFormatter.string(from: date)
     print("Localized date: \(localizedDate)")
 }
 

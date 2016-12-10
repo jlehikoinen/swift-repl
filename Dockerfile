@@ -1,8 +1,10 @@
-FROM ubuntu:15.10
+FROM ubuntu:16.04
 MAINTAINER Janne Lehikoinen <jl@miltei.net>
 
 RUN apt-get update && \
-	apt-get install -y wget clang libicu-dev libpython2.7 libxml2 && \
+	apt-get install -y wget curl build-essential clang-3.6 libedit-dev python2.7 python2.7-dev libicu-dev libxml2 libcurl4-openssl-dev && \
+	update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.6 100 && \
+	update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-3.6 100 && \
 	apt-get autoclean && \
 	apt-get --purge -y autoremove && \
 	rm -rf /var/lib/apt/lists/* && \
@@ -10,17 +12,19 @@ RUN apt-get update && \
 	wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
 	gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-# ENV BRANCH swift-2.2.1-release
-ENV BRANCH development
-# ENV VERSION 2.2.1-RELEASE
-ENV VERSION DEVELOPMENT-SNAPSHOT-2016-02-08-a
-ENV PLATFORM ubuntu15.10
+# ENV BRANCH development
+# ENV VERSION DEVELOPMENT-SNAPSHOT-2016-02-08-a
+
+ENV BRANCH swift-3.0.1-release
+ENV VERSION 3.0.1-RELEASE
+ENV PLATFORM ubuntu16.04
+
 ENV SWIFT_PATH /usr/local
 ENV PATH $SWIFT_PATH/swift/usr/bin:$PATH
 
 RUN cd $SWIFT_PATH && \
-	wget https://swift.org/builds/$BRANCH/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz && \
-	wget https://swift.org/builds/$BRANCH/ubuntu1510/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz.sig && \
+	wget https://swift.org/builds/$BRANCH/ubuntu1604/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz && \
+	wget https://swift.org/builds/$BRANCH/ubuntu1604/swift-$VERSION/swift-$VERSION-$PLATFORM.tar.gz.sig && \
 	tar xzf swift-$VERSION-$PLATFORM.tar.gz && \
 	mv swift-$VERSION-$PLATFORM swift && \
 	gpg --verify swift-$VERSION-$PLATFORM.tar.gz.sig && \
