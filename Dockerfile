@@ -15,8 +15,8 @@ RUN apt-get update && \
 # ENV BRANCH development
 # ENV VERSION DEVELOPMENT-SNAPSHOT-2016-02-08-a
 
-ENV BRANCH swift-3.0.1-release
-ENV VERSION 3.0.1-RELEASE
+ENV BRANCH swift-3.0.2-release
+ENV VERSION 3.0.2-RELEASE
 ENV PLATFORM ubuntu16.04
 
 ENV SWIFT_PATH /usr/local
